@@ -70,6 +70,8 @@ Content loading...
 :::
 ```
 
+In the placeholder the original reference/link is disabled.
+
 After the DOM has loaded, the extension will attempt to fetch the content from the specified reference and replace the placeholder with the fetched content. If the fetch fails, the content of the placeholder will be updated to indicate that the fetch failed.
 
 If preferred, you can also specify the content of the placeholder by including content in the directive:
