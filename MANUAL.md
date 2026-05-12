@@ -32,7 +32,7 @@ An example of the `fetch` directive with a reference to a figure with the name `
 Before fetching the placeholder of the `fetch` directive will be:
 
 :::{admonition} Fetching {numref}`sticky_basic`
-:class: fetch
+:class: fetch click-to-fetch
 Content loading...
 :::
 
@@ -44,7 +44,7 @@ After successfully fetching the content from the specified reference, the placeh
 If the fetch fails, the content of the placeholder will be updated to indicate that the fetch failed:
 
 :::{admonition} Failed to fetch {numref}`sticky_basic`
-:class: fetch failed-to-fatch
+:class: fetch failed-to-fetch
 Fetching failed.
 :::
 

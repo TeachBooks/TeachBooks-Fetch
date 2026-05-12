@@ -8,6 +8,8 @@ This extension introduces two new directives:
 - `fetch`: Fetches content from a specified reference and inserts it into the rendered document.
 - `click-to-fetch`: Creates a clickable element that, when clicked, fetches content from a specified reference and inserts it into the rendered document.
 
+The extension is designed to be used for the HTML output of Jupyter Book and Sphinx projects, and can be easily installed and activated as described below.
+
 ## Installation
 
 ```bash
@@ -120,6 +122,14 @@ All options, content and behavior for the `fetch` directive are also available f
 
 If the click-to-fetch behavior is preferred without changing the default placeholder, you can also use the `fetch` directive with the `click-to-fetch` class.
 
+## Fetch rules
+
+The extension will attempt to fetch the content from the specified reference using the following steps:
+1. Extract the URL and ID from the reference.
+2. Attempt to fetch the content from the URL and extract the element with the specified ID from the fetched HTML.
+
+This fetches the specified element all it's child elements _as-is_. This means that no CSS files nor JavaScript files will be fetched. This also means that if the fetched element contains any references, these will not be resolved and will be rendered as-is and might result in broken links.
+
 <!-- Start examples -->
 ## Examples
 
@@ -128,4 +138,4 @@ Examples can be found here: [TeachBooks Manual](https://teachbooks.io/manual/_gi
 <!-- Start contribute -->
 ## Contribute
 
-This tool's repository is stored on [GitHub](https://github.com/TeachBooks/TeachBooks-Questions). If you'd like to contribute, you can create a fork and open a pull request on the [GitHub repository](https://github.com/TeachBooks/TeachBooks-Questions).
+This tool's repository is stored on [GitHub](https://github.com/TeachBooks/TeachBooks-Fetch). If you'd like to contribute, you can create a fork and open a pull request on the [GitHub repository](https://github.com/TeachBooks/TeachBooks-Fetch).
