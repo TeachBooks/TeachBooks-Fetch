@@ -29,7 +29,7 @@ An example of the `fetch` directive with a reference to a figure with the name `
 :::
 ```
 
-Before fetching the placeholder of the `fetch` directive will be:
+Before fetching, the placeholder of the `fetch` directive will be:
 
 :::{admonition} Fetching {numref}`sticky_basic`
 :class: fetch click-to-fetch
@@ -57,7 +57,7 @@ An example of the `click-to-fetch` directive with a reference to a figure with t
 :::
 ```
 
-Before fetching the placeholder of the `click-to-fetch` directive will be:
+The placeholder of the `click-to-fetch` directive will be:
 
 :::{click-to-fetch} {numref}`sticky_basic`
 :::
