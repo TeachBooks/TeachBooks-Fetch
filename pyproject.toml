@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "teachbooks-fetch"
+dynamic=["version"]
+authors = [{ name = "D. den Ouden-van der Horst", email = "d.denouden-vanderhorst@tudelft.nl" }]
+description = "A Sphinx extension that allows fetching of other HTML elements after DOM load."
+readme = "README.md"
+dependencies = [
+    "sphinx"
+]
+requires-python = ">=3.10"
+
+[tool.hatch]
+version.source = "vcs"
+build.hooks.vcs.version-file = "src/teachbooks_fetch/_version.py"
