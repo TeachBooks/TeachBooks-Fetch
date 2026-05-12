@@ -78,9 +78,11 @@ If preferred, you can also specify the content of the placeholder by including c
 
 ```
 :::{fetch} <ref>
-This content will be shown while the fetch is in progress.
+This content will be shown while the fetch of [!a!] is in progress.
 :::
 ```
+
+Here `[!a!]` will be replaced with reference given in the directive argument.
 
 If preferred, you can also specify the title of the placeholder by including the `title` option:
 
@@ -90,7 +92,7 @@ If preferred, you can also specify the title of the placeholder by including the
 :::
 ```
 
-Here `[!a!]` will be replaced with reference given in the directive argument.
+Here `[!a!]` will again be replaced with reference given in the directive argument.
 
 If preferred, you can also specify additional CSS classes for the placeholder by including the `class` option:
 
@@ -99,6 +101,8 @@ If preferred, you can also specify additional CSS classes for the placeholder by
 :class: my-custom-class
 :::
 ```
+
+The special CSS class `cancel-fetch` can be used to indicate that the fetch should not be performed and that the placeholder should be rendered as-is.
 
 ### Click-to-Fetch Directive
 
