@@ -139,7 +139,7 @@ This fetches the specified element all it's child elements _as-is_. This means t
 <!-- Start examples -->
 ## Examples
 
-Examples can be found here: [TeachBooks Manual](https://teachbooks.io/manual/_git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.html#Examples)
+Examples can be found here: [TeachBooks Manual](https://teachbooks.io/manual/_git/github.com_TeachBooks_TeachBooks-Fetch/main/MANUAL.html#examples)
 
 <!-- Start contribute -->
 ## Contribute
