@@ -98,7 +98,7 @@ class ClickToFetchDirective(FetchDirective):
             self.options["title"] = "Click to fetch [!a!]"
         # change the default content
         if not self.content:
-            self.options["content"] = ["Waiting for a click..."]
+            self.content = ["Waiting for a click..."]
         
         return super().run()
 
