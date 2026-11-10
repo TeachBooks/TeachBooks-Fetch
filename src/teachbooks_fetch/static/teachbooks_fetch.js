@@ -11,6 +11,13 @@ async function renderInsertedMath(node) {
 	if (window.MathJax && window.MathJax.Hub && typeof window.MathJax.Hub.Queue === "function") {
 		window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, node]);
 	}
+
+	if (typeof window.renderMathInElement === "function" && window.katex_options) {
+        window.renderMathInElement(node, {
+            ...window.katex_options,
+            macros: { ...window.katex_options.macros }   // KaTeX writes into this object, so copy it
+        });
+    }
 }
 
 function elementFromHTML(html) {
