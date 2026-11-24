@@ -3,21 +3,29 @@ async function renderInsertedMath(node) {
 		return;
 	}
 
+	console.log("renderInsertedMath called with node:", node);
+	
+	// Prioritize KaTeX if available, since it supports \htmlClass and other features
+	if (typeof window.renderMathInElement === "function" && window.katex_options) {
+		try {
+			console.log("Using KaTeX with options:", window.katex_options);
+			window.renderMathInElement(node, window.katex_options);
+			return;
+		} catch (error) {
+			console.warn("KaTeX rendering failed:", error);
+		}
+	}
+
 	if (window.MathJax && typeof window.MathJax.typesetPromise === "function") {
+		console.log("Using MathJax typesetPromise");
 		await window.MathJax.typesetPromise([node]);
 		return;
 	}
 
 	if (window.MathJax && window.MathJax.Hub && typeof window.MathJax.Hub.Queue === "function") {
+		console.log("Using MathJax Hub Queue");
 		window.MathJax.Hub.Queue(["Typeset", window.MathJax.Hub, node]);
 	}
-
-	if (typeof window.renderMathInElement === "function" && window.katex_options) {
-        window.renderMathInElement(node, {
-            ...window.katex_options,
-            macros: { ...window.katex_options.macros }   // KaTeX writes into this object, so copy it
-        });
-    }
 }
 
 function elementFromHTML(html) {
